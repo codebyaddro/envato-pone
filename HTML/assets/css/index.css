@@ -1,6 +1,328 @@
-/* font link */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* -- font link -- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* -- universal style -- */
 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
+}
+
+/* -- html style -- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* -- html tag default style remove -- */
+a {
+    text-decoration: none;
+}
+
+/* -- root -- */
+:root {
+    /* -- color -- */
+    --primary-color: #070824;
+    --secondary-color: #93F2FF;
+    --secondary-color2: #93F2FF1a;
+    --secondary-color3: #D7D9FF;
+    --border-color: #ffffff1a;
+    --white: #ffffff;
+    /* -- font -- */
+    --primary-font: "Montserrat", sans-serif;
+    --secondary-font: "Poppins", sans-serif;
+}
+
+/* -- body style -- */
+body {
+    background-color: #070824;
+}
+
+/* -- container style -- */
+.cba-container {
+    width: 100%;
+    padding: 0.5rem;
+}
+
+/* -- header style -- */
+
+/* -- navigation bar style -- */
+header > nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 1.5rem;
+}
+
+/* -- navigation bar logo style -- */
+header > nav > .logo > a > img {
+    width: 102px;
+    height: 40px;
+}
+
+/* -- navigation bar links style -- */
+header > nav > .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-left: 23rem;
+    margin-right: 1rem;
+}
+
+header > nav > .nav-links > li > a {
+    font-size: 0.95rem;
+    color: var(--white);
+    cursor: pointer;
+    /* transition */
+    transition: color .3s, padding-bottom .3s, border-bottom .3s;
+}
+
+header > nav > .nav-links > li > a:hover {
+    color: var(--secondary-color);
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+header > nav > .nav-links > li > a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-color);
+    transition: width .3s;
+}
+header > nav > .nav-links > li > a:hover::after {
+    width: 100%;
+}
+
+/* -- navigation bar active link style -- */
+header > nav > .nav-links > li > a.active {
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+/* -- navigation bar btn style -- */
+header > nav > .nav-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* -- navigation bar btn one -- */
+header > nav > .nav-btn > button:nth-child(1) {
+    padding: 0.5rem 1rem 0.4rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 2px solid var(--border-color);
+    border-radius: 2rem;
+    background-color: transparent;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+header > nav > .nav-btn > button:nth-child(1):hover {
+    border: 2px solid var(--secondary-color);
+    transition: all .3s;
+}
+
+/* -- navigation bar btn two -- */
+header > nav > .nav-btn > button:nth-child(2) {
+    padding: 0.5rem 1rem 0.4rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 2px solid var(--secondary-color);
+    border-radius: 2rem;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+header > nav > .nav-btn > button:nth-child(2):hover {
+    background-color: transparent;
+    color: var(--secondary-color);
+    transition: all .3s;
+}
+
+/* --------------------------------------------------------------------------------------------------------------- */
+
+/* -- hero section style -- */
+header > .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+    padding: 2rem 12rem;
+}
+
+/* -- hero content style -- */
+header > .hero > .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-left: 3rem;
+    margin-right: 5rem;
+}
+
+/* -- hero title style -- */
+
+header > .hero > .hero-content > h3 {
+    position: relative;
+    padding: 0.5rem 1rem 0.4rem;
+    background-color: transparent;
+}
+header > .hero > .hero-content > h3 > span {
+    color: var(--secondary-color);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+header > .hero > .hero-content > h3::before,
+header > .hero > .hero-content > h3::after,
+header > .hero > .hero-content > h3 > span::before,
+header > .hero > .hero-content > h3 > span::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #444;
+}
+
+header > .hero > .hero-content > h3::before {
+    top: 0;
+    left: 0;
+    border-bottom: none;
+    border-right: none;
+}
+
+header > .hero > .hero-content > h3::after {
+    top: 0;
+    right: 0;
+    border-bottom: none;
+    border-left: none;
+}
+
+header > .hero > .hero-content > h3 > span::before {
+    bottom: 0;
+    left: 0;
+    border-top: none;
+    border-right: none;
+}
+header > .hero > .hero-content > h3 > span::after {
+    bottom: 0;
+    right: 0;
+    border-top: none;
+    border-left: none;
+}
+
+/* -- hero heading style -- */
+header > .hero > .hero-content > h1 {
+    color: var(--white);
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 5.5rem;
+}
+
+/* -- hero name style */
+header > .hero > .hero-content > h1 > .hero-name {
+    color: var(--secondary-color);
+    font-size: 5.5rem;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+/* -- hero role style */
+header > .hero > .hero-content > h1 > .hero-role {
+    color: var(--white);
+    font-size: 5.5rem;
+    font-weight: 700;
+}
+
+header > .hero > .hero-content > .hero-role {
+    color: var(--secondary-color);
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* -- hero description style -- */
+header > .hero > .hero-content > .hero-description {
+    font-family: var(--secondary-font);
+    color: var(--secondary-color3);
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* -- hero button style */
+header > .hero > .hero-content > .hero-btn-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+header > .hero > .hero-content > .hero-btn-social > a > button {
+    padding: 0.5rem 1rem 0.3rem;    
+    font-size: 1rem;
+    font-weight: 500;
+    border: 2px solid var(--secondary-color);
+    border-radius: 2rem;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+header > .hero > .hero-content > .hero-btn-social > a > button:hover {
+    background-color: transparent;
+    color: var(--secondary-color);
+    transition: all .3s;
+}
+
+/* -- hero social style */
+header > .hero > .hero-content > .hero-btn-social > .hero-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+header > .hero > .hero-content > .hero-btn-social > .hero-social > a > i.bx {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    padding: 0.5rem;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+header > .hero > .hero-content > .hero-btn-social > .hero-social > a > i.bx:hover {
+    background-color: var(--secondary-color2);
+    border: 2px solid var(--secondary-color);
+    transition: all .3s;
+}    
+
+/* -- hero image style -- */
+header > .hero > .hero-img > img {
+    width: 500px!important;
+    height: 700px!important;
+    object-fit: cover;
+    box-shadow: var(--secondary-color) -5px -5px 15px 5px;
 }
